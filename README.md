@@ -30,4 +30,17 @@ vite相关的总结
 
 2、缓慢的更新
 基于打包器启动时，重建整个包的效率很低。原因显而易见：因为这样更新速度会随着应用体积增长而直线下降。
+
+3、传统打包器的流程
+Bundle based dev server 流程如下：
+
+                    module
+
+          route     module
+
+entry --> route --> module --> Bundle --> Server ready
+
+          route     module
+
+                    module
 ```
