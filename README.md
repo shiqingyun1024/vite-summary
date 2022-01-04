@@ -38,9 +38,22 @@ Bundle based dev server 流程如下：
 
           route     module
 
-entry --> route --> module --> Bundle --> Server ready
-
+entry --> route --> module --> Bundle   -->     Server ready
+(入口)     (页面)    (组件)      (打包成单一的文件)  (服务器加载)
           route     module
 
                     module
+
+4、ESM打包器的流程
+Native ESM based dev server
+
+                                     module
+
+                           route     module
+
+Server ready --> entry --> route --> module 
+(服务器加载)       (入口)     (页面)    (组件)
+                           route     module
+
+                                     module
 ```
