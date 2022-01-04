@@ -45,15 +45,17 @@ entry --> route --> module --> Bundle   -->     Server ready
                     module
 
 4、ESM打包器的流程
-Native ESM based dev server
+Native ESM based dev server  流程如下：
 
                                      module
 
                            route     module
-
+        (HTTP request)
 Server ready --> entry --> route --> module 
-(服务器加载)       (入口)     (页面)    (组件)
-                           route     module
-
+(服务器加载)       (入口) |   (页面)    (组件)
+                        |   route    module
+            (Dynamic import route 动态加载页面或者组件)
                                      module
+
+上面的流程说白了就是按需加载的流程                                     
 ```
