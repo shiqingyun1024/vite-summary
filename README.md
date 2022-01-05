@@ -59,3 +59,11 @@ Server ready --> entry --> route --> module
 
 上面的流程说白了就是按需加载的流程                                     
 ```
+### Vite概念及设计思想
+```
+1、Vite将模块区分为依赖和源码两类，提升开发服务启动时间。
+依赖：在开发时不会变动的纯JavaScript，Vite会使用esbuild（go编写的）预构建依赖。
+源码：通常为JSX、CSS或者Vue SFC等，时常会被编辑，需要转换，基于路由拆分
+
+2、Vite以原生ESM方式提供源码，让浏览器接管打包工作。
+```
