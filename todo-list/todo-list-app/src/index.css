@@ -10,3 +10,8 @@ body{
   font-size: 35px;
   margin: 30px;
 }
+
+.todo-item-input{
+  display: flex;
+  justify-content: space-between;
+}
