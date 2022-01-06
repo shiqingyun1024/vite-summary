@@ -1,1 +1,12 @@
-
+body{
+  background-color: aliceblue;
+}
+.todo-app{
+  text-align: center;
+  width: 1080px;
+  margin: 0 auto;
+}
+.todo-title{
+  font-size: 35px;
+  margin: 30px;
+}
