@@ -3,7 +3,8 @@ import { Input, Button } from 'antd'
 import { STATUS } from '../../config/status'
 // import { useState } from 'react'
 
-const ToDoItem = () => {
+const ToDoItem = (props) => {
+    const { onSubmit } = props;
     const [todoItem,setTodoItem] = useState({
         id:Math.random(),
         content:'',
@@ -17,6 +18,7 @@ const ToDoItem = () => {
     }
     const handleSubmit = () =>{
         console.log('handleSubmit');
+        onSubmit && onSubmit(todoItem)
     }
     return (
         <div className="todo-item-input">
