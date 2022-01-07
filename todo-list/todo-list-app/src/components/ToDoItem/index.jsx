@@ -22,7 +22,7 @@ const ToDoItem = (props) => {
     }
     return (
         <div className="todo-item-input">
-            <Input value={todoItem.content} onChange={handleChange} />
+            <Input value={todoItem.content} onPressEnter={handleSubmit} onChange={handleChange} />
             <Button size="large" type="primary" onClick={handleSubmit}>提交</Button>
         </div>
 
