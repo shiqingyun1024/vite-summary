@@ -1,6 +1,11 @@
 import React from 'react'
 import { Input, Button } from 'antd'
 
+const todoItem = {
+    id:123,
+    content:'xxx',
+    status:0
+}
 const ToDoItem = () => {
     const handleSubmit = () =>{
         console.log('handleSubmit');
