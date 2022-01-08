@@ -12,6 +12,10 @@ function App() {
     ])
   }
   const handleOperate = (todoItem)=>{
+    console.log('handleOperate');
+    const newTodos = todos.filter(todo=>todo.id!== todoItem.id)
+    newTodos.push(todoItem)
+    setTodos(newTodos)
 
   }
   return (
