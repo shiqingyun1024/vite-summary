@@ -15,7 +15,7 @@ function App() {
     <div className="todo-app">
       <h2 className="todo-title">待办清单</h2>
       <ToDoItem onSubmit={handleSubmit} />
-      <ToDoContainer todos={todos}/>
+      <ToDoContainer todos={todos} onOperate={handleOperate}/>
     </div>
   )
 }

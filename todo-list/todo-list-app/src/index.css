@@ -23,6 +23,9 @@ body{
 .todo-container-list{
   display: flex !important;
   justify-content: space-between;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #aaa;
 }
 .todo-item-operate{
 
