@@ -1,14 +1,23 @@
 import React from 'react'
 import { List } from 'antd'
 import { CheckCircleTwoTone, CloseCircleTwoTone } from '@ant-design/icons'
+import { STATUS } from '../../config/status'
 
 const ToDoContainer = (props) => {
-    const { todos = [] } = props
+    const { todos = [], onOperate } = props
     const handleOperate = (operate, item) => {
         switch (operate) {
             case 'is-delete':
+                onOperate && onOperate({
+                    ...item,
+                    status:STATUS.IS_DELETE
+                })
                 break;
             case 'is-done':
+                onOperate && onOperate({
+                    ...item,
+                    status:STATUS.IS_DONE
+                })
                 break;
             default:
                 break;

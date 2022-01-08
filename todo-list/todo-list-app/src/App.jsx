@@ -11,6 +11,9 @@ function App() {
       todoItem
     ])
   }
+  const handleOperate = (todoItem)=>{
+
+  }
   return (
     <div className="todo-app">
       <h2 className="todo-title">待办清单</h2>
