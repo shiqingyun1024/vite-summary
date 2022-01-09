@@ -2,10 +2,12 @@ import { useState } from 'react'
 import ToDoItem from './components/ToDoItem'
 import ToDoFilter from './components/ToDoFilter'
 import ToDoContainer from './components/ToDoContainer'
+import { STATUS } from './config/status'
 
 function App() {
   const [todos, setTodos] = useState([])
-  const [ filterStatus, setFilterStatus] = useState('');
+  // 全部 0,1  已完成 1 未完成 0
+  const [filterStatus, setFilterStatus] = useState(`${STATUS.IS_CREATE},${STATUS.IS_DONE}`);
   const handleSubmit = (todoItem) => {
     console.log('App', todoItem);
     setTodos([
@@ -13,19 +15,23 @@ function App() {
       todoItem
     ])
   }
-  const handleOperate = (todoItem)=>{
+  const handleOperate = (todoItem) => {
     console.log('handleOperate');
-    const newTodos = todos.filter(todo=>todo.id!== todoItem.id)
+    const newTodos = todos.filter(todo => todo.id !== todoItem.id)
     newTodos.push(todoItem)
     setTodos(newTodos)
 
+  }
+  const handleStatusChange = (status) => {
+    console.log(status);
+    
   }
   return (
     <div className="todo-app">
       <h2 className="todo-title">待办清单</h2>
       <ToDoItem onSubmit={handleSubmit} />
-      <ToDoFilter filterStatus={filterStatus}/>
-      <ToDoContainer todos={todos} onOperate={handleOperate}/>
+      <ToDoFilter filterStatus={filterStatus} onFilterStatus={handleStatusChange} />
+      <ToDoContainer todos={todos} onOperate={handleOperate} />
     </div>
   )
 }
