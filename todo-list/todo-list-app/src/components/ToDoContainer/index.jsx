@@ -23,6 +23,10 @@ const ToDoContainer = (props) => {
                 break;
         }
     }
+
+    const showTodos = todos.filter(todo=>{
+        return todo.status != STATUS.IS_DELETE;
+    })
     return (
         <div className="todo-container">
             <List
