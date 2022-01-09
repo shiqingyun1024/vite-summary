@@ -30,7 +30,7 @@ const ToDoContainer = (props) => {
     return (
         <div className="todo-container">
             <List
-                dataSource={todos}
+                dataSource={showTodos}
                 renderItem={
                     todo => (
                         <List.Item className="todo-container-list">
