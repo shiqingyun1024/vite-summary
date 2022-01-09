@@ -36,8 +36,8 @@ const ToDoContainer = (props) => {
                         <List.Item className={todo.status === STATUS.IS_DONE?"todo-container-list-done":"todo-container-list"}>
                             {todo.content}
                             <div className="todo-item-operate">
-                                <CheckCircleTwoTone onClick={() => handleOperate("is-done", todo)} />
-                                <CloseCircleTwoTone onClick={() => handleOperate("is-delete", todo)} />
+                                <CloseCircleTwoTone style={{ fontSize: '24px', color: '#08c', paddingRight:'10px' }} onClick={() => handleOperate("is-delete", todo)} />
+                                <CheckCircleTwoTone style={{ fontSize: '24px', color: '#08c' }} onClick={() => handleOperate("is-done", todo)} />
                             </div>
                         </List.Item>
                     )
