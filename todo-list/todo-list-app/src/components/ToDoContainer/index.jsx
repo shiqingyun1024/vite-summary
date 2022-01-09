@@ -16,7 +16,7 @@ const ToDoContainer = (props) => {
             case 'is-done':
                 onOperate && onOperate({
                     ...item,
-                    status:STATUS.IS_DONE
+                    status:item.status === STATUS.IS_DONE? STATUS.IS_CREATE:STATUS.IS_DONE
                 })
                 break;
             default:
