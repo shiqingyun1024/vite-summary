@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ToDoItem from './components/ToDoItem'
+import ToDoFilter from './components/ToDoFilter'
 import ToDoContainer from './components/ToDoContainer'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
     <div className="todo-app">
       <h2 className="todo-title">待办清单</h2>
       <ToDoItem onSubmit={handleSubmit} />
+      <ToDoFilter/>
       <ToDoContainer todos={todos} onOperate={handleOperate}/>
     </div>
   )
