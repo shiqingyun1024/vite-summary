@@ -5,14 +5,11 @@ import { STATUS } from '../../config/status'
 
 const ToDoItem = (props) => {
     const { onSubmit } = props;
-    const [todoItem,setTodoItem] = useState({
-        id:Math.random(),
-        content:'',
-        status:STATUS.IS_CREATE
-    })
+    const [todoItem,setTodoItem] = useState({})
     const handleChange = (event)=>{
         setTodoItem({
-            ...todoItem,
+            id:Math.random(),
+            status:STATUS.IS_CREATE,
             content:event.target.value
         })
     }
