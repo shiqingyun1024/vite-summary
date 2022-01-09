@@ -33,11 +33,11 @@ const ToDoContainer = (props) => {
                 dataSource={showTodos}
                 renderItem={
                     todo => (
-                        <List.Item className="todo-container-list">
+                        <List.Item className={todo.status === STATUS.IS_DONE?"todo-container-list-done":"todo-container-list"}>
                             {todo.content}
                             <div className="todo-item-operate">
-                                <CheckCircleTwoTone onClick={() => handleOperate("is-delete", todo)} />
-                                <CloseCircleTwoTone onClick={() => handleOperate("is-done", todo)} />
+                                <CheckCircleTwoTone onClick={() => handleOperate("is-done", todo)} />
+                                <CloseCircleTwoTone onClick={() => handleOperate("is-delete", todo)} />
                             </div>
                         </List.Item>
                     )

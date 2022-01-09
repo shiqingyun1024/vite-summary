@@ -27,6 +27,15 @@ body{
   font-size: 15px;
   border-bottom: 1px solid #aaa !important;
 }
+.todo-container-list-done{
+  display: flex !important;
+  justify-content: space-between;
+  padding: 10px !important;
+  font-size: 15px;
+  border-bottom: 1px solid #aaa !important;
+  text-decoration: line-through;
+  background-color: lightgray;
+}
 .todo-container-list:last-of-type{
   border-bottom:none !important;
 }
