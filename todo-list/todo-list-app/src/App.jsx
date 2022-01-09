@@ -24,14 +24,15 @@ function App() {
   }
   const handleStatusChange = (status) => {
     console.log(status);
-    
+    setFilterStatus(status)
+
   }
   return (
     <div className="todo-app">
       <h2 className="todo-title">待办清单</h2>
       <ToDoItem onSubmit={handleSubmit} />
       <ToDoFilter filterStatus={filterStatus} onFilterStatus={handleStatusChange} />
-      <ToDoContainer todos={todos} onOperate={handleOperate} />
+      <ToDoContainer filterStatus={filterStatus} todos={todos} onOperate={handleOperate} />
     </div>
   )
 }
