@@ -19,7 +19,7 @@ const ToDoItem = (props) => {
     }
     return (
         <div className="todo-item-input">
-            <Input value={todoItem.content} onPressEnter={handleSubmit} onChange={handleChange} />
+            <Input placeholder="请输入待办事项" value={todoItem.content} onPressEnter={handleSubmit} onChange={handleChange} />
             <Button size="large" type="primary" onClick={handleSubmit}>提交</Button>
         </div>
 
