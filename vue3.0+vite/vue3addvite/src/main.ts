@@ -5,4 +5,4 @@ import router from './router/index'
 import store from './store/index'
 import App from './App.vue'
 
-createApp(App).use(ElementPlus).mount('#app')
+createApp(App).use(router).use(store).use(ElementPlus).mount('#app')
