@@ -39,6 +39,19 @@ const rules = reactive({
     { min: 3, max: 18, message: "Length should be 3 to 18", trigger: "blur" },
   ],
 });
+
+const ruleFormRef = ref(null)
+// 登录
+function login():void{
+    ruleFormRef.value.validate(valid=>{ // 检验
+       if(valid) {
+           console.log('submit');
+       }else{
+           console.log('error submit');
+           return false
+       }
+    })
+}
 </script>
 
 <style>
