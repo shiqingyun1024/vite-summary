@@ -25,6 +25,10 @@
 
 <script setup lang="ts">
 import { reactive, ref } from "vue";
+import { Login } from '@/api'
+import { useRouter} from 'vue-router'  // 导入路由
+
+const router = useRouter(); // 实例化路由
 const temp = reactive({
   user: "",
   password: "",
@@ -45,6 +49,17 @@ const ruleFormRef = ref(null)
 function login():void{
     ruleFormRef.value.validate(valid=>{ // 检验
        if(valid) {
+           Login(temp).then(res=>{
+               let {code,msg} = res.data; // 对象解构
+               if(code == 200){
+                //  跳转首页
+                router.push('/home')
+               }else{
+                 alert(msg);
+               }
+               console.log(res);
+               
+           })
            console.log('submit');
        }else{
            console.log('error submit');
