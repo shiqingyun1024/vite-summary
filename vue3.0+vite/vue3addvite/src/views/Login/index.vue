@@ -14,26 +14,31 @@
       <el-form-item label="密码" prop="password">
         <el-input type="password" v-model="temp.password" />
       </el-form-item>
+      <el-form-item>
+        <el-button type="primary" @click="login(ruleFormRef)"
+          >登录</el-button
+        >
+      </el-form-item>
     </el-form>
   </div>
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
+import { reactive, ref } from "vue";
 const temp = reactive({
-  user: '',
-  password: ''
-})
+  user: "",
+  password: "",
+});
 const rules = reactive({
   name: [
-    { required: true, message: '请输入用户名', trigger: 'blur' },
-    { min: 3, max: 18, message: 'Length should be 3 to 18', trigger: 'blur' },
+    { required: true, message: "请输入用户名", trigger: "blur" },
+    { min: 3, max: 18, message: "Length should be 3 to 18", trigger: "blur" },
   ],
   password: [
-    { required: true, message: '请输入密码', trigger: 'blur' },
-    { min: 3, max: 18, message: 'Length should be 3 to 18', trigger: 'blur' },
-  ]
-})
+    { required: true, message: "请输入密码", trigger: "blur" },
+    { min: 3, max: 18, message: "Length should be 3 to 18", trigger: "blur" },
+  ],
+});
 </script>
 
 <style>
